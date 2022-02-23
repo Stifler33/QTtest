@@ -65,7 +65,7 @@ int main(int argc, char *argv[]){
     layout->addWidget(spinbox);
     layout->addWidget(slider);
     QObject::connect(slider, &QSlider::valueChanged, spinbox, &QSpinBox::setValue);
-    QObject::connect(slider, &QSlider::valueChanged, [](int newValue){MainWidget::setImage(newValue);});
+    QObject::connect(slider, &QSlider::valueChanged, [&main](int newValue){main.setImage(newValue);});
     windows->show();
     app.exec();
 }
